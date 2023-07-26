@@ -32,16 +32,16 @@ const App = () => {
           <input type="text" id="ItemName" />
           <button onClick={handleAddItems}>Add Todo</button>
         </div>
-
-        {
-          todoList && todoList.map((item, index) => (
-            <div key={index}>
-              <span className="itemName">{item.name}</span>
-              <button onClick={() => handleRemoveItem(item.name)}>Delete</button>
-            </div>
-          ))
-        }
-
+        <ul>
+          {
+            todoList && todoList.map((item, index) => (
+                <li key={index}>
+                  <span className="itemName">{item.name}</span>
+                  <button onClick={() => handleRemoveItem(item.name)}>Delete</button>
+                </li>
+              ))
+          }
+        </ul>
     </div>
   )
 }
